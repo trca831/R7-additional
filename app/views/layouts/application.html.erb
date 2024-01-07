@@ -10,7 +10,13 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body> 
+  <% if flash[:alert].present? %>
+    <p class="my_alert"><%= flash[:alert] %></p>
+  <% end %>
     <%= yield %>
   </body>
+
+ 
+
 </html>
