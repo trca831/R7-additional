@@ -1,14 +1,28 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Customers</h1>
+<h1 style="border: 10px solid purple; text-align: center">Customer List!</h1>
 
-<div id="customers">
-  <% @customers.each do |customer| %>
-    <%= render customer %>
-    <p>
-      <%= link_to "Show this customer", customer %>
-    </p>
-  <% end %>
-</div>
+<table>
+  <thead>
+    <tr>
+      <th>Full Name</th>
+      <th>Number of Orders</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @customers.each do |customer| %>
+      <tr>
+        <td style="border: 5px solid black; text-align:center; padding:10px"><%= customer.full_name %></td>
+        <td style="border: 5px solid black; text-align:center; padding:10px"><%= customer.orders.count %></td>
+        <td style="border: 5px solid black; text-align:center; padding:10px">
+          <%= button_to "Show", customer, method: :get %>
+          <%= button_to "Edit", edit_customer_path(customer), method: :get %>
+          <%= button_to "Delete", customer, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
 <%= link_to "New customer", new_customer_path %>
