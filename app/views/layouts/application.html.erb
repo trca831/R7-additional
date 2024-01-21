@@ -15,10 +15,14 @@
   <body> 
 
   <div class="mt-4 p-5 bg-primary text-white rounded; banner-background">
-<h1 style="text-align: center;">Diagon Alley: Flourish and Blotts</h1>
-<p style="text-align: center;"> For wizarding customers and their enchanted orders. </p>
+<h1 style="text-align: center; font-size: 70px">Diagon Alley: Flourish and Blotts</h1>
+<p style="text-align: center; font-size: 30px"> For wizarding customers and their enchanted orders. </p>
 
 </div>
+
+<% if flash[:alert].present? %>
+<p class="alert alert-warning"> <%=flash[:alert] %> </p>
+<% end %>
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <div class="container-fluid">
@@ -45,12 +49,6 @@
     </div>
   </div>
 </nav>
-
-
-
-  <% if flash[:alert].present? %>
-    <p class="my_alert"><%= flash[:alert] %></p>
-  <% end %>
 
   <div class="container-fluid">
         <%= yield %>
