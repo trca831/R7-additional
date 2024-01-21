@@ -14,13 +14,17 @@
         <td style="border: 5px solid black; text-align:center; padding:10px"><%= customer.full_name %></td>
         <td style="border: 5px solid black; text-align:center; padding:10px"><%= customer.orders.count %></td>
         <td style="border: 5px solid black; text-align:center; padding:10px">
-          <%= button_to "Show", customer, method: :get %>
-          <%= button_to "Edit", edit_customer_path(customer), method: :get %>
-          <%= button_to "Delete", customer, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <div style="display: flex; justify-content: space-between;">
+            <%= button_to "Show", customer, method: :get, class: "btn btn-primary" %>
+           
+            <%= button_to "Edit", edit_customer_path(customer), method: :get, class: "btn btn-primary" %>
+           
+            <%= button_to "Delete", customer, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary" %>
+            </div>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to "New customer", new_customer_path %>
+<%= link_to "New Customer", new_customer_path, class: "btn btn-primary" %>
