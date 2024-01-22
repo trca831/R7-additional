@@ -14,6 +14,25 @@
  *= require_self
  */
 
+ @import "bootstrap"; 
+ @import "font-awesome";
+
  .my_alert {
     color: red;
   }  
+
+  :root {
+    --bs-body-bg: #a3acf0;
+ }
+
+ @font-face {
+  font-family: 'Harry';
+  src: url('HarryP-MVZ6w.ttf');
+}
+
+ .banner-background {
+  background-image: url('library.jpeg');
+  background-size: cover;
+  font-family: 'Harry';
+}
+

@@ -1,10 +1,10 @@
-<p style="color: green"><%= notice %></p>
+
 
 <%= render @customer %>
 
 <div>
-  <%= link_to "Edit this customer", edit_customer_path(@customer) %> |
-  <%= link_to "Back to customers", customers_path %>
+  <%= link_to "Edit this customer", edit_customer_path(@customer), class: "btn btn-primary" %> |
+  <%= link_to "Back to customers", customers_path, class: "btn btn-primary" %>
 
   <%= button_to "Delete this customer", @customer, method: :delete %>
 
@@ -15,15 +15,15 @@
         <% @customer.orders.each do |order| %>
           <%= render order%>
           <p>
-          <%= link_to "Show Order", order %>
+          <%= link_to "Show Order", order, class: "btn btn-primary" %>
           </p>
 
           <p>
-          <%= link_to "Edit Order", edit_order_path(order) %>
+          <%= link_to "Edit Order", edit_order_path(order), class: "btn btn-primary" %>
           </p>
 
           <p>
-          <%= link_to "Delete this Order", data: {"turbo-method": :delete} %>
+          <%= link_to "Delete this Order", data: {"turbo-method": :delete}, class: "btn btn-primary" %>
           </p>
 
         <% end %>

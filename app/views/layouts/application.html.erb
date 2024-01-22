@@ -8,15 +8,51 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+
   </head>
 
-  <body> 
-  <% if flash[:alert].present? %>
-    <p class="my_alert"><%= flash[:alert] %></p>
-  <% end %>
-    <%= yield %>
-  </body>
-
  
+  <body> 
+
+  <div class="mt-4 p-5 bg-primary text-white rounded; banner-background">
+<h1 style="text-align: center; font-size: 70px">Diagon Alley: Flourish and Blotts</h1>
+<p style="text-align: center; font-size: 30px"> For wizarding customers and their enchanted orders. </p>
+
+</div>
+
+<% if flash[:alert].present? %>
+<p class="alert alert-danger"> <%=flash[:alert] %> </p>
+<% end %>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Customers</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/customers">Customers</a></li>
+            <li><a class="dropdown-item" href= "/customers/new">New Customer</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Orders</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/orders">Orders</a></li>
+            <li><a class="dropdown-item" href="/orders/new">New Order</a></li>
+          </ul>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <div class="container-fluid">
+        <%= yield %>
+        </div>
+  </body>
 
 </html>
